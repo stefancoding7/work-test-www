@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Hash;
 
 class LoginController extends Controller
 {
     public function login()
     {
+        if(auth()->user()){
+            return redirect()->route('/');
+        }
         return view('login-register.login');
+    }
+
+    public function loginPost(Request $request)
+    {
+        
     }
 
     public function register()
@@ -32,6 +41,6 @@ class LoginController extends Controller
         $user->password = Hash::make($data['password']);
         $user->save();
 
-        dd($user);
+        return redirect()->route('/');
     }
 }

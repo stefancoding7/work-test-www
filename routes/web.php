@@ -22,3 +22,8 @@ Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'p
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
 Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'])->name('register');
 Route::post('/register-post', [App\Http\Controllers\LoginController::class, 'registerPost'])->name('register-post');
+
+//middleware routes
+Route::middleware('auth')->group(function() {
+    
+});
