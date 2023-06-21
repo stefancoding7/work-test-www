@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>Basket</h3>
-                            
+                            @livewire('cart.basket')
                         </div>
                     </div>
                 </div>
