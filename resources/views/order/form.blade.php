@@ -9,24 +9,24 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
-                        <label for="full-name">Full Name</label>
-                        <input class="form-control mb-3" type="text" name="full_name" id="full-name" placeholder="Full Name" >
+                        <label for="full-name">Full Name<sup>*</sup></label>
+                        <input class="form-control mb-3" type="text" name="full_name" id="full-name" placeholder="Full Name" required>
                     </div>
                     <div class="col-md-12">
-                        <label for="country">Country</label>
-                        <input class="form-control mb-3" type="text" name="country" id="country" placeholder="Country" >
+                        <label for="country">Country<sup>*</sup></label>
+                        <input class="form-control mb-3" type="text" name="country" id="country" placeholder="Country" required>
                     </div>
                     <div class="col-md-12">
-                        <label for="postcode">Postcode</label>
-                        <input class="form-control mb-3" type="text" name="postcode" id="postcode" placeholder="Country" >
+                        <label for="postcode">Postcode<sup>*</sup></label>
+                        <input class="form-control mb-3" type="text" name="postcode" id="postcode" placeholder="Postcode" required>
                     </div>
                     <div class="col-md-12">
-                        <label for="city">City</label>
-                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="Country" >
+                        <label for="city">City<sup>*</sup></label>
+                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="City" required>
                     </div>
                     <div class="col-md-12">
-                        <label for="address">Address</label>
-                        <input class="form-control mb-3" type="text" name="address" id=address" placeholder="Country" >
+                        <label for="address">Address<sup>*</sup></label>
+                        <input class="form-control mb-3" type="text" name="address" id=address" placeholder="Address" required>
                     </div>
                 </div>
                 

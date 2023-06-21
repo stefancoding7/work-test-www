@@ -19,7 +19,7 @@ class OrderController extends Controller
 
     public function saveOrder(Request $request)
     {
-        
+        dd($request);
         return view('order.thanks')->with('order', $order);
     }
 }

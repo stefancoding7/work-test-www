@@ -30,5 +30,5 @@ Route::post('/login-post', [App\Http\Controllers\LoginController::class, 'loginP
 Route::middleware('auth')->group(function() {
     Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
     Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder'])->name('order-form');
-    Route::get('/save-order', [App\Http\Controllers\Sales\OrderController::class, 'saveOrder'])->name('save-order');
+    Route::post('/save-order', [App\Http\Controllers\Sales\OrderController::class, 'saveOrder'])->name('save-order');
 });
