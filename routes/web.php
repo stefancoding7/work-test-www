@@ -24,7 +24,7 @@ Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'
 
 //login register posts
 Route::post('/register-post', [App\Http\Controllers\LoginController::class, 'registerPost'])->name('register-post');
-Route::get('/login-post', [App\Http\Controllers\LoginController::class, 'loginPost'])->name('login-post');
+Route::post('/login-post', [App\Http\Controllers\LoginController::class, 'loginPost'])->name('login-post');
 
 //middleware routes
 Route::middleware('auth')->group(function() {
