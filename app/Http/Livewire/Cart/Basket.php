@@ -24,7 +24,7 @@ class Basket extends Component
 
     public function removeProduct($rowId)
     {
-        dd($rowId);
+        
         Cart::remove($rowId);    
    
     }
