@@ -6,7 +6,8 @@
         <div class="card own-card shadow-lg ">
             <div class="card-body text-center">
                 <h2>Login</h2>
-                <form>
+                <form action="{{route('login-post')}}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
