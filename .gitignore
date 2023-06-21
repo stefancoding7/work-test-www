@@ -5,6 +5,7 @@
 /storage/*.key
 /vendor
 /public/robots.txt
+.env
 .env.example
 .env.backup
 .phpunit.result.cache
