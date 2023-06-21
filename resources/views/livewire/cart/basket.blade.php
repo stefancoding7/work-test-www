@@ -19,7 +19,7 @@
                 @auth
                     <div class="d-flex justify-content-between">
                         <p>Total: <b>£{{$total}}</b></p>
-                        <a href="" class="btn btn-outline-primary rounded-pill">Place Order <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="{{route('order-form')}}" class="btn btn-outline-primary rounded-pill">Go To Checkout <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 @endauth
 

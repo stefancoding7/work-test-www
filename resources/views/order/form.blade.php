@@ -1,41 +1,66 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+@extends('layouts.app')
+@section('content')
+    
+    <h3>Place Order</h3>
+    <hr>
+    <form action="{{route('save-order')}}" method="POST">
+        @csrf
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="full-name">Full Name</label>
+                        <input class="form-control mb-3" type="text" name="full_name" id="full-name" placeholder="Full Name" >
+                    </div>
+                    <div class="col-md-12">
+                        <label for="country">Country</label>
+                        <input class="form-control mb-3" type="text" name="country" id="country" placeholder="Country" >
+                    </div>
+                    <div class="col-md-12">
+                        <label for="postcode">Postcode</label>
+                        <input class="form-control mb-3" type="text" name="postcode" id="postcode" placeholder="Country" >
+                    </div>
+                    <div class="col-md-12">
+                        <label for="city">City</label>
+                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="Country" >
+                    </div>
+                    <div class="col-md-12">
+                        <label for="address">Address</label>
+                        <input class="form-control mb-3" type="text" name="address" id=address" placeholder="Country" >
+                    </div>
                 </div>
-            @endif
+                
+            </div>
+            <div class="col-md-6">
+                <div class="card own-card ">
+                    <div class="card-body">
+                        <h3>Basket ({{$products->count()}})</h3>
+                        @if($products && $products->count() > 0)
+                            <ol class="list-group list-group-numbered">
+                                @foreach($products as $key => $product)
+                                    <li  class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                        <div class="fw-bold">{{$product->name}}</div>
+                                        {{$product->options['description']}} | £{{number_format($product->price, 2)}}
+                                        </div>
+                                        
+                                    </li>
+                                @endforeach
+                                
+                            </ol>
+                            <hr>
+                            @auth
+                                <div class="d-flex justify-content-between">
+                                    <p>Total: <b>£{{$total}}</b></p>
+                                    <button type="submit"  class="btn btn-outline-primary rounded-pill">Place Order <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+                            @endauth
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-
+                            
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </form>
+@endsection

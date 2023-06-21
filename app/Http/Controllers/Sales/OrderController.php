@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Sales;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,14 +12,14 @@ class OrderController extends Controller
 {
     public function placeOrder(Request $request)
     {
-        //$order = new Order;
-        return view('order.form');
+        $products = Cart::content();
+        $total = Cart::total();
+        return view('order.form', compact('products', 'total'));
     }
 
     public function saveOrder(Request $request)
     {
-        $order = new \App\Models\Order();
-        return view('order.thanks')
-            ->with('order', $order);
+        
+        return view('order.thanks')->with('order', $order);
     }
 }

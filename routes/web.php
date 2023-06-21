@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\Catalogue\ProductController::class, 'index'])->name('/');
 
-Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder'])->name('order-form');
+
 
 
 //login routes
@@ -29,4 +29,6 @@ Route::post('/login-post', [App\Http\Controllers\LoginController::class, 'loginP
 //middleware routes
 Route::middleware('auth')->group(function() {
     Route::get('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+    Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder'])->name('order-form');
+    Route::get('/save-order', [App\Http\Controllers\Sales\OrderController::class, 'saveOrder'])->name('save-order');
 });

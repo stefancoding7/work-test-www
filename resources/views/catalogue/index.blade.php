@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
         
-
-            
-    
+        <h3>Shop</h3>
+        <hr>
         @if($products->count() > 0)
 
             <div class="row">
