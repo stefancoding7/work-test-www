@@ -26,5 +26,7 @@ class AddToCart extends Component
             $product->price,
             0,
         );
+
+        $this->emit('basket');
     }
 }
