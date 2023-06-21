@@ -6,7 +6,8 @@
         <div class="card own-card shadow-lg ">
             <div class="card-body text-center">
                 <h2>Register</h2>
-                <form>
+                <form action="{{route('register-post')}}" method="POST"> 
+                    @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" id="name" >
