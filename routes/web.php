@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Catalogue\Product::class, 'index']);
+Route::get('/', [App\Http\Controllers\Catalogue\ProductController::class, 'index']);
