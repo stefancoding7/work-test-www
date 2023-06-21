@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Order;
+use App\Models\OrderProduct;
 
 class OrderController extends Controller
 {
@@ -21,6 +22,7 @@ class OrderController extends Controller
     {
 
         $user = auth()->user();
+        $products = Cart::content();
         $total = Cart::total();
 
 
@@ -28,8 +30,16 @@ class OrderController extends Controller
         $order->customer_id = $user->id;
         $order->price = $total;
         $order->delivery_address = $this->saveAddress($request, $user);
-        
-        
+        $order->save();
+
+        foreach($products as $product){
+            $order_product = new OrderProduct;
+            $order_product->order_id = $order->id;
+            $order_product->product_id = $product->id;
+            $order_product->save();
+        }
+
+        dd($order);
 
         return view('order.thanks')->with('order', $order);
     }
