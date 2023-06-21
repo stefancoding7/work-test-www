@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Livewire\Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Livewire\Component;
+use App\Models\Product;
 
 class AddToCart extends Component
 {
@@ -14,8 +16,9 @@ class AddToCart extends Component
         return view('livewire.cart.add-to-cart');
     }
 
-    public function addToCart()
+    public function addToCart($p)
     {
-        
+         $product = Product::find($p);
+         dd($product);
     }
 }
