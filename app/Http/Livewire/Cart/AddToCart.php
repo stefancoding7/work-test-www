@@ -18,7 +18,13 @@ class AddToCart extends Component
 
     public function addToCart($p)
     {
-         $product = Product::find($p);
-         dd($product);
+        $product = Product::find($p);
+        Cart::add(
+            $product->id,
+            $product->name,
+            1,
+            $product->price,
+            0,
+        );
     }
 }
