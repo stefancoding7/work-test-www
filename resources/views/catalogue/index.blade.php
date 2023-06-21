@@ -11,7 +11,7 @@
                     <div class="row">
                         @foreach($products as $product)
                         <div class="col-6">
-                            <div class="card mb-4">
+                            <div class="card own-card mb-4">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$product->sku}}</h5>
                                     <p class="card-text">{{$product->description}}</p>
@@ -25,12 +25,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            
-                            @livewire('cart.basket')
-                        </div>
-                    </div>
+    
+                    @livewire('cart.basket')
+                        
                 </div>
             </div>
             
