@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-6 col-6">
+    <div class="col-md-6 col-12">
         <div class="card own-card shadow-lg ">
             <div class="card-body text-center">
                 <h2>Login</h2>
@@ -22,9 +22,12 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-6">
-        <div class="login-side">
-
+    <div class="col-md-6 col-12 d-none d-md-block">
+        <div class="login-side d-flex justify-content-center align-items-center">
+            <div>
+                <h3 style="color: white;">Work Test Shop</h3>
+                
+            </div>
         </div>
     </div>
 </div>
