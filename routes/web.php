@@ -20,3 +20,4 @@ Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'p
 
 //login routes
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'])->name('register');
