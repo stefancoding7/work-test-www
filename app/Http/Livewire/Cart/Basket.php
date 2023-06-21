@@ -15,19 +15,17 @@ class Basket extends Component
 
     public function render()
     {
+        
         $this->products = Cart::content();
         $this->total = Cart::total();
 
-        $ids = [];
+        return view('livewire.cart.basket');
+    }
 
-        //get all products IDs and save it in to array
-        foreach($this->products as $p){
-            $ids[] = $p->id;
-        }
-
-        //get all products where ID array
-        $productsAll = Product::whereIn('id', $ids)->get();
-        
-        return view('livewire.cart.basket', compact('productsAll'));
+    public function removeProduct($rowId)
+    {
+        dd($rowId);
+        Cart::remove($rowId);    
+   
     }
 }

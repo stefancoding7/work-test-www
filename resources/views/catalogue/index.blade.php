@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <h3>Basket</h3>
+                            
                             @livewire('cart.basket')
                         </div>
                     </div>

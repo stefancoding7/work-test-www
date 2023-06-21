@@ -25,6 +25,7 @@ class AddToCart extends Component
             1,
             $product->price,
             0,
+            ['description' => $product->description]
         );
 
         $this->emit('basket');
