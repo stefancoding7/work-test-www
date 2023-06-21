@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    public function shippingAddress(){
+
+        $address = json_decode($this->attributes['delivery_address'], true);
+        return $address;
+
+    }
 }

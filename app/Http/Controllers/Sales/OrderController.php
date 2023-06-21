@@ -39,7 +39,8 @@ class OrderController extends Controller
             $order_product->save();
         }
 
-        dd($order);
+        
+        Cart::destroy();
 
         return view('order.thanks')->with('order', $order);
     }
