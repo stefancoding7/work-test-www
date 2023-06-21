@@ -28,5 +28,5 @@ Route::post('/login-post', [App\Http\Controllers\LoginController::class, 'loginP
 
 //middleware routes
 Route::middleware('auth')->group(function() {
-
+    Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 });

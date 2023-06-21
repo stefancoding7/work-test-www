@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Session;
 
 class LoginController extends Controller
 {
@@ -56,5 +57,14 @@ class LoginController extends Controller
         $user->save();
 
         return redirect()->route('/');
+    }
+
+    public function logout()
+    {
+        Session::flush();
+
+        Auth::logout();
+
+        return Redirect('/');
     }
 }
