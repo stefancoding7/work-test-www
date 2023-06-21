@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Catalogue\ProductController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Catalogue\ProductController::class, 'index'])->name('/');
 
-Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder']);
+Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder'])->name('order-form');
+
+
+//login routes
+Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
