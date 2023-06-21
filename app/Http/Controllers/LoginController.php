@@ -17,7 +17,7 @@ class LoginController extends Controller
         return view('login-register.register');
     }
 
-    public function registerPost()
+    public function registerPost(Request $request)
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
