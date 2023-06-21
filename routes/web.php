@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\Catalogue\ProductController::class, 'index']);
+
+Route::get('/order-form', [App\Http\Controllers\Sales\OrderController::class, 'placeOrder']);

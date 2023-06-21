@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Sales;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Order extends Controller
+use App\Models\Order;
+
+Class OrderController extends Controller
 {
     public function placeOrder(Request $request)
     {
-        $order = new \App\Models\Order();
-        return view('order.form')
-            ->with('order', $order);
+        //$order = new Order;
+        return view('order.form');
     }
 
     public function saveOrder(Request $request)
