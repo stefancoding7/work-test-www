@@ -16,6 +16,7 @@ class Basket extends Component
     public function render()
     {
         
+        
         $this->products = Cart::content();
         $this->total = Cart::total();
 
