@@ -2,19 +2,27 @@
 @section('content')
         
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    @if($products->count() > 0)
-                        @foreach($products as $product)
-                        <div>
-                            <p>{{$product->sku}}</p>
-                            <p>{{$product->description}}</p>
-                            <p>{{$product->price}}</p>
+            
+    
+        @if($products->count() > 0)
+            <div class="row">
+                @foreach($products as $product)
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$product->sku}}</h5>
+                            <p class="card-text">{{$product->description}}</p>
+                            <p class="card-text"><b>£{{number_format($product->price, 2)}}</b></p>
+                            @livewire('cart.add-to-cart', ['product' => $product], key($product->id))
                         </div>
-                        @endforeach
-                    @endif
+                    </div>
+                    
                 </div>
+                @endforeach
             </div>
+        @endif
+    
+            
         
 @endsection
 
