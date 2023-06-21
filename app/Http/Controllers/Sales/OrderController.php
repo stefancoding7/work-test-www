@@ -5,6 +5,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\Order;
 use App\Models\OrderProduct;
@@ -20,6 +21,16 @@ class OrderController extends Controller
 
     public function saveOrder(Request $request)
     {
+
+
+        $this->validate($request,[
+            'full_name'=> 'required',
+            'city' => 'required',
+            'postcode' => 'required',
+            'country' => 'required',
+            'address' => 'required',
+        ]);
+
 
         $user = auth()->user();
         $products = Cart::content();
@@ -39,7 +50,7 @@ class OrderController extends Controller
             $order_product->save();
         }
 
-        
+
         Cart::destroy();
 
         return view('order.thanks')->with('order', $order);

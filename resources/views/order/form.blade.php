@@ -10,23 +10,24 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="full-name">Full Name<sup>*</sup></label>
-                        <input class="form-control mb-3" type="text" name="full_name" id="full-name" placeholder="Full Name" required>
+                        
+                        <input class="form-control mb-3 @error('full_name') is-invalid @enderror" type="text" name="full_name" id="full-name" placeholder="Full Name">
                     </div>
                     <div class="col-md-12">
                         <label for="country">Country<sup>*</sup></label>
-                        <input class="form-control mb-3" type="text" name="country" id="country" placeholder="Country" required>
+                        <input class="form-control mb-3 @error('country') is-invalid @enderror" type="text" name="country" id="country" placeholder="Country" >
                     </div>
                     <div class="col-md-12">
                         <label for="postcode">Postcode<sup>*</sup></label>
-                        <input class="form-control mb-3" type="text" name="postcode" id="postcode" placeholder="Postcode" required>
+                        <input class="form-control mb-3 @error('postcode') is-invalid @enderror" type="text" name="postcode" id="postcode" placeholder="Postcode" >
                     </div>
                     <div class="col-md-12">
                         <label for="city">City<sup>*</sup></label>
-                        <input class="form-control mb-3" type="text" name="city" id="city" placeholder="City" required>
+                        <input class="form-control mb-3 @error('city') is-invalid @enderror" type="text" name="city" id="city" placeholder="City" >
                     </div>
                     <div class="col-md-12">
                         <label for="address">Address<sup>*</sup></label>
-                        <input class="form-control mb-3" type="text" name="address" id=address" placeholder="Address" required>
+                        <input class="form-control mb-3 @error('address') is-invalid @enderror" type="text" name="address" id=address" placeholder="Address" >
                     </div>
                 </div>
                 
